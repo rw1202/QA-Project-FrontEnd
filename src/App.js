@@ -93,7 +93,7 @@ editUserData: {userName, userId }, editUserModal: ! this.state.editUserModal
   
 }
 _refreshList() {
-  axios.get('http://l35.234.129.245:8082/bookingApi/api/User/getAllUsers').then((response)=> 
+  axios.get('http://35.234.129.245:8082/bookingApi/api/User/getAllUsers').then((response)=> 
   {console.log(response.data);
     this.setState({
     users: response.data
