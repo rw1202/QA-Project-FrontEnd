@@ -29,13 +29,13 @@ class GetAllBookings extends Component{
       }
 
       deleteBooking(bookingId){
-        axios.get('http://localhost:8080/bookingApi/api/Booking/deleteBooking/'+ bookingId). then ((response) => { 
+        axios.get('http://35.234.129.245:8082/bookingApi/api/Booking/deleteBooking/'+ bookingId). then ((response) => { 
           this._refreshList();
       })
     };
 
     _refreshList() {
-      axios.get('http://localhost:8080/bookingApi/api/Booking/getAllBookings').then
+      axios.get('http://35.234.129.245:8082/bookingApi/api/Booking/getAllBookings').then
       ((response)=> {
     
      
