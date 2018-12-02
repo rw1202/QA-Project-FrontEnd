@@ -55,13 +55,13 @@ class App extends Component {
 
 
   addBk() {
-axios.post('http://localhost:8080/bookingApi/api/Booking/addBooking', this.state.newBkData). then
+axios.post('http://35.234.129.245:8082/bookingApi/api/Booking/addBooking', this.state.newBkData). then
 (( response)=> console.log(response.data))
 
 
   }
   addUser() {
-axios.post('http://localhost:8080/bookingApi/api/User/addUser',this.state.newUserData).then ((response) => 
+axios.post('http://35.234.129.245:8082/bookingApi/api/User/addUser',this.state.newUserData).then ((response) => 
 {
 let {users} = this.state;
 users.push(response.data)
@@ -75,7 +75,7 @@ this.setState({users, newUserModal: false,   newUserData:
 )}
 updateUser(){
   let {userName} = this.state.editUserData;
-axios.put('http://localhost:8080/bookingApi/api/User/updateUser/'+ this.state.editUserData.userId, {
+axios.put('http://35.234.129.245:8082/bookingApi/api/User/updateUser/'+ this.state.editUserData.userId, {
   userName}). then ((response)=> {
 this._refreshList();
 this.setState({
@@ -93,7 +93,7 @@ editUserData: {userName, userId }, editUserModal: ! this.state.editUserModal
   
 }
 _refreshList() {
-  axios.get('http://localhost:8080/bookingApi/api/User/getAllUsers').then((response)=> 
+  axios.get('http://l35.234.129.245:8082/bookingApi/api/User/getAllUsers').then((response)=> 
   {console.log(response.data);
     this.setState({
     users: response.data
@@ -104,7 +104,7 @@ _refreshList() {
 }
 
 deleteUser(userId){
-axios.get('http://localhost:8080/bookingApi/api/User/deleteUser/'+ userId). then ((response) => { 
+axios.get('http://35.234.129.245:8082/bookingApi/api/User/deleteUser/'+ userId). then ((response) => { 
   this._refreshList();
 })
 }
